@@ -1,4 +1,4 @@
-# CI5438-Proyecto1
+# CI5438-Proyecto2
 
 El objetivo de este proyecto será la implementación del algoritmo de backpropagation para redes neuronales feedforward, tal cuál como fue visto en clases, y su uso para crear redes neuronales para resolver problemas de clasificación. Primero se trabajará con un conjunto de datos de plantas Iris, probando distintas topologías, incluyendo modelos de neuronas únicas y de una capa. Luego, trabajaremos con un problema de filtros de spam sobre correos electrónicos, de manera más libre.
 
