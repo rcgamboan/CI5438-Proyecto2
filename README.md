@@ -18,7 +18,7 @@ Adiciones como momentum, regularización y tasas adaptativas son opcionales.
 
 Se incluye en el archivo `iris.csv`[1], que contiene información para 3 clases, cada una siendo un tipo de planta del género iris. Este conjunto de datos está completo, perfectamente balanceado entre las tres clases y no requiere ningún tipo de preprocesamiento. Por lo tanto, se requiere que usted haga experimentos para hallar clasificadores binarios y multiclase para determinar la clase de una planta iris, usando TODOS los atributos y TODOS los ejemplos del conjunto de datos.
 
-Debe aplicar un proceso de validación cruzada. Para ello, debe separar su conjunto de datos en conjuntos de entrenamiento y prueba, para lo cuál se sugiere una separación de 80% y 20% respectivamente. Puede elegir seleccionar también un conjunto de validación, pero no es obligatorio.
+Debe aplicar un proceso de validación cruzada. Para ello, debe separar su conjunto de datos en conjuntos de entrenamiento y prueba, para lo cuál se sugiere una separación de 80% y 20% respectivamente. Puede elegir seleccionar también un conjunto de validación, pero no es obligatorio. Trate de mantener el balance en las clases al hacer la separación. Considere que para los clasificadores binarios podría querer considerar una separación distinta.
 
 Para el proceso de entrenamiento, asegúrese de probar con distintos valores para la tasa de entrenamiento. Grafique las curvas de aprendizaje para los experimentos realizados.
 
