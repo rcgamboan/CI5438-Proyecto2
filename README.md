@@ -29,7 +29,7 @@ La idea de un clasificador binario será simplemente clasificar si un ejemplo pe
 Para cada experimento realizado, debe incluir tablas con:
 * Error promedio, mínimo y máximo en el conjunto de entrenamiento y prueba.
 * Cantidad de falsos positivos tanto en el conjunto de entrenamiento como de prueba. Un falso positivo en un clasificador binario es un ejemplo para el que la hipótesis incluye al ejemplo en la categoría clasificada, cuando no pertenece a ella en realidad.
-* Cantidad de falsos positivos tanto en el conjunto de entrenamiento como de prueba. Un falso negativo en un clasificador binario es un ejemplo para el que la hipótesis excluye de la categoría clasificada, cuando en realidad sí pertenece a ella. 
+* Cantidad de falsos negativos tanto en el conjunto de entrenamiento como de prueba. Un falso negativo en un clasificador binario es un ejemplo para el que la hipótesis excluye de la categoría clasificada, cuando en realidad sí pertenece a ella. 
 
 
 Se requiere que realice experimentos para las siguientes topologías:
