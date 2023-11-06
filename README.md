@@ -6,7 +6,7 @@ La elección de lenguaje de programación es libre. Más allá de la implementac
 
 ## Parte 1: Implementación
 
-Se requiere que elabore, de la manera que usted considere conveniente, una implementación de redes funcionales feedforward para clasificación, con las siguientes características:
+Se requiere que elabore, de la manera que usted considere conveniente, una implementación de redes neuronales feedforward para clasificación, con las siguientes características:
 * Debe permitir la configuración de tantas capas ocultas como se desee, permitiendo 0 capas ocultas para tener clasificadores lineales.
 * Debe permitir configurar la cantidad de neuronas en cada capa.
 * Debe usar la función logística como función de activación para las neuronas.
