@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 
 def main():
-    graficar = False
+    graficar = True
     # Leer archivo
     data_iris = pd.read_csv("../docs/iris.csv", sep=',')
 
@@ -151,7 +151,8 @@ def main():
     red_mc = Network(4,[5],3)
     
     errores_mc = red_mc.entrenar_red(X_train.values, y_train_mc, iteraciones, tasa_aprendizaje)
-    red_mc.graficar_mse(len(errores_mc), errores_mc, guardar=False, nombre=f'grafica_multiclase.png')
+    if graficar:
+        red_mc.graficar_mse(len(errores_mc), errores_mc, guardar=False, nombre=f'grafica_multiclase.png', titulo='Clasificador Multiclase')
     mc_setosa_fp = 0
     mc_setosa_fn = 0
     mc_versicolor_fp = 0
