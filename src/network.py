@@ -88,67 +88,14 @@ class Network:
         
         return errores
 
-    def graficar_mse(self,iterations, cost_num, guardar=False, nombre='mse.png'):
+    def graficar_mse(self,iterations, cost_num, guardar=False, nombre='mse.png', titulo='MSE vs # Iteracion'):
         fig, ax = plt.subplots()
         ax.plot(np.arange(iterations), cost_num, 'r')
         ax.set_xlabel('Iteracion #')
         ax.set_ylabel('MSE')
-        ax.set_title('MSE vs # Iteracion')
+        ax.set_title(titulo)
         plt.style.use('fivethirtyeight')
         if guardar:
             plt.savefig(nombre)
         plt.show()    
             
-
-if __name__ == '__main__':
-
-    # Crear red neuronal
-    red = Network(2,[5],1)
-    
-    # Crear data
-    X = np.random.rand(1000,2)
-    y = np.array([[i[0] + i[1]] for i in X])
-
-    tasa_aprendizaje = 0.1
-    iteraciones = 500
-    # Entrenar red con data
-    errores = red.entrenar_red(X, y, iteraciones, tasa_aprendizaje)
-
-    # Imprimir error
-    red.graficar_mse(len(errores), errores, guardar=False, nombre=f'grafica{tasa_aprendizaje}.png')
-
-    # Predecir datos
-    X = np.array([0.3, 0.1])
-    y = np.array([0.4])
-
-    prediccion = red.feedforward(X)
-
-    for i in range(len(prediccion)):
-        print(f"Yreal: {y[i]} Ypred: {round(prediccion[i],2)}")
-
-    # Ejemplo de https://www.aprendemachinelearning.com/crear-una-red-neuronal-en-python-desde-cero/
-    """
-    red = Network(2,[3],2)
-    X = np.array([[0, 0],   # sin obstaculos
-              [0, 1],   # sin obstaculos
-              [0, -1],  # sin obstaculos
-              [0.5, 1], # obstaculo detectado a derecha
-              [0.5,-1], # obstaculo a izq
-              [1,1],    # demasiado cerca a derecha
-              [1,-1]])  # demasiado cerca a izq
-    
-    y = np.array([[0,1],    # avanzar
-                [0,1],    # avanzar
-                [0,1],    # avanzar
-                [-1,1],   # giro izquierda
-                [1,1],    # giro derecha
-                [0,-1],   # retroceder
-                [0,-1]])  # retroceder
-
-    red.entrenar_red(X, y, 15000, 0.03)
-
-    index=0
-    for e in X:
-        print(f"Yreal: {y[index]} Ypred: {red.feedforward(e)}")
-        index=index+1
-    """
