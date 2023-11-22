@@ -1,0 +1,31 @@
+Iris Setosa
+Convergencia en la iteracion 227
+
+Iris Versicolor
+Convergencia en la iteracion 230
+
+Iris Virginica
+Convergencia en la iteracion 298
+
+Precision en clase Iris-setosa: 66.67%
+Cantidad de datos de prueba: 30
+Falsos positivos en clase Iris-setosa: 0
+Falsos negativos en clase Iris-setosa: 10
+
+Precision en clase Iris-versicolor: 70.0%
+Cantidad de datos de prueba: 30
+Falsos positivos en clase Iris-versicolor: 0
+Falsos negativos en clase Iris-versicolor: 9
+
+Precision en clase Iris-virginica: 63.33%
+Cantidad de datos de prueba: 30
+Falsos positivos en clase Iris-virginica: 0
+Falsos negativos en clase Iris-virginica: 11
+
+Clasificador multiclase
+Convergencia en la iteracion 649
+
+Precision con el clasificador multiclase: 30.0%
+Cantidad de datos de prueba: 30
+Falsos positivos en clasificador multiclase: 21
+Falsos negativos en clasificador multiclase: 21
