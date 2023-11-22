@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 def main():
     graficar = True
     # Leer archivo
-    data_iris = pd.read_csv("../docs/iris.csv", sep=',')
+    data_iris = pd.read_csv("./docs/iris.csv", sep=',')
 
     # Separar data de entrenamiento y de prueba
     X = data_iris[["sepal_length", "sepal_width", "petal_length", "petal_width"]]
@@ -24,8 +24,8 @@ def main():
     versicolor_red = Network(4,[5],1)
     virginica_red = Network(4,[5],1)
 
-    iteraciones = 500
-    tasa_aprendizaje = 0.1
+    iteraciones = 1000
+    tasa_aprendizaje = 0.005
 
     setosa_train_class = y_train == "Iris-setosa"
     setosa_test_class = y_test == "Iris-setosa"
