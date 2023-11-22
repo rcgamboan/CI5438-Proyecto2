@@ -7,6 +7,10 @@ class Network:
         self.n_inputs = n_inputs
         self.n_hidden = n_hidden
         self.n_outputs = n_outputs
+        self.accuracy = 0
+        self.fp = 0
+        self.fn = 0
+        self.errores = []
 
         if (n_hidden == []):
             layers = [self.n_inputs] + [self.n_outputs]
@@ -21,7 +25,7 @@ class Network:
 
     def error_cuadratico(self,Ypred, Yreal):
         # Calculo del error cuadratico medio
-        error = np.mean((Yreal - Ypred) ** 2) / 2
+        error = np.mean((Yreal - Ypred) ** 2.0) / 2.0
 
         return error
 
@@ -57,12 +61,12 @@ class Network:
             self.derivadas[i] = np.dot(activacion_actual_reshaped, delta_reshaped)
 
             error = np.dot(delta, self.weights[i].T)
-
+        
         
         # Descenso de gradiente
         for i in range(len(self.weights)):
             self.weights[i] += tasa_aprendizaje * self.derivadas[i]
-
+        #print(i,"backpropagation")
         return error
     
     def entrenar_red(self, X, y, iteraciones, tasa_aprendizaje, tolerancia=1e-6):
@@ -85,7 +89,7 @@ class Network:
                 if (abs(errores[i] - errores[i-1]) <= tolerancia):
                     print(f"Convergencia en la iteracion {i}")
                     break
-        
+        self.errores = errores
         return errores
 
     def graficar_mse(self,iterations, cost_num, guardar=False, nombre='mse.png', titulo='MSE vs # Iteracion'):
@@ -97,5 +101,30 @@ class Network:
         plt.style.use('fivethirtyeight')
         if guardar:
             plt.savefig(nombre)
-        plt.show()    
+        plt.show()
+
+    def calcular_precision(self, y_pred_class, y_test):
+        self.accuracy = np.mean(y_pred_class == y_test)
+        return self.accuracy
+    
+    def calcular_fp_y_fn(self, y_pred_class, y_test):
+        self.fp, self.fn = 0, 0
+        for i in range(len(y_pred_class)):
+            if y_pred_class[i] == 1 and y_test.iloc[i] == 0:
+                self.fp += 1
+            elif y_pred_class[i] == 0 and y_test.iloc[i] == 1:
+                self.fn += 1
+        return self.fp, self.fn
+
+    def mostrar_info(self):
+        print(f"\nPrecision de la red: {round(self.accuracy*100,2)}%")
+        print(f"Falsos positivos en la red: {self.fp}")
+        print(f"Falsos negativos en la red: {self.fn}")
+        #print(f"Errores: {self.errores}")
+        if self.errores != []:    
+            print(f"Error promedio de la red: {np.mean(self.errores)}")
+            print(f"Error maximo de la red: {np.max(self.errores)}")
+            print(f"Error minimo de la red: {np.min(self.errores)}")
+
+
             
