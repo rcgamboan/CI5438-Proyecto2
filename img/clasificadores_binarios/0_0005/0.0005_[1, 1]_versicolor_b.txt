@@ -1,0 +1,6 @@
+Precision de la red: 66.67%
+Falsos positivos en la red: 0
+Falsos negativos en la red: 10
+Error promedio de la red: 0.06331673317183252
+Error maximo de la red: 0.1401477037390546
+Error minimo de la red: 0.05590965316425492

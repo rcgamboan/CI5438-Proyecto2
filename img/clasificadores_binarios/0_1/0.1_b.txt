@@ -1,0 +1,28 @@
+Iris Setosa
+Convergencia en la iteracion 1
+
+Precision de la red: 33.33%
+Falsos positivos en la red: 20
+Falsos negativos en la red: 0
+Error promedio de la red: 1.7679423767424797e-07
+Error maximo de la red: 1.814643193746372e-07
+Error minimo de la red: 1.7212415597385876e-07
+
+Iris Versicolor
+
+Precision de la red: 80.0%
+Falsos positivos en la red: 3
+Falsos negativos en la red: 3
+Error promedio de la red: 0.002388958202813626
+Error maximo de la red: 0.08068694994064192
+Error minimo de la red: 6.273690600088329e-05
+
+Iris Virginica
+Convergencia en la iteracion 19
+
+Precision de la red: 93.33%
+Falsos positivos en la red: 0
+Falsos negativos en la red: 2
+Error promedio de la red: 0.0001856998075969909
+Error maximo de la red: 0.0026306427955438507
+Error minimo de la red: 1.9034022122950827e-08
