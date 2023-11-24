@@ -11,7 +11,7 @@ def main():
 
     graficar = True
 
-    with open("./docs/spambase.names", "r") as f:
+    with open("./docs/spambase/spambase.names", "r") as f:
         column_names = f.readlines()
     
     nombres = []
@@ -21,7 +21,7 @@ def main():
 
     nombres.append("spam")
 
-    X = pd.read_csv("./docs/spambase.data", names=nombres)
+    X = pd.read_csv("./docs/spambase/spambase.data", names=nombres)
     y = X["spam"]
     X.drop("spam", axis=1, inplace=True)
     #print(X.head())
