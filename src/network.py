@@ -101,7 +101,7 @@ class Network:
         plt.style.use('fivethirtyeight')
         if guardar:
             plt.savefig(nombre)
-        plt.show()
+        # plt.show()
 
     def calcular_precision(self, y_pred_class, y_test):
         self.accuracy = np.mean(y_pred_class == y_test)
@@ -116,15 +116,16 @@ class Network:
                 self.fn += 1
         return self.fp, self.fn
 
-    def mostrar_info(self):
-        print(f"\nPrecision de la red: {round(self.accuracy*100,2)}%")
-        print(f"Falsos positivos en la red: {self.fp}")
-        print(f"Falsos negativos en la red: {self.fn}")
-        #print(f"Errores: {self.errores}")
-        if self.errores != []:    
-            print(f"Error promedio de la red: {np.mean(self.errores)}")
-            print(f"Error maximo de la red: {np.max(self.errores)}")
-            print(f"Error minimo de la red: {np.min(self.errores)}")
+    def mostrar_info(self, tasa, capa, tipo):
+        with open(f"./img/spam/{tasa}_{capa}_{tipo}.txt", "w") as f:
+            f.write(f"Precision de la red: {round(self.accuracy*100,2)}%\n")
+            f.write(f"Falsos positivos en la red: {self.fp}\n")
+            f.write(f"Falsos negativos en la red: {self.fn}\n")
+            #f.write(f"Errores: {self.errores}")
+            if self.errores != []:    
+                f.write(f"Error promedio de la red: {np.mean(self.errores)}\n")
+                f.write(f"Error maximo de la red: {np.max(self.errores)}\n")
+                f.write(f"Error minimo de la red: {np.min(self.errores)}")
 
 
             
