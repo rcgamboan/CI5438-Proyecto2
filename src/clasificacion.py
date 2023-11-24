@@ -16,20 +16,20 @@ def main():
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
 
-    # Creacion de las redes neuronales para cada especie,
-    # cada red neuronal tiene 4 neuronas en la capa de entrada ya que se tienen 4 caracteristicas, 
-    # 1 capa oculta con 5 neuronas
-    # y una neurona en la capa de salida ya que se buscan clasificadores binarios
-
-    # Iris Setosa
-    setosa_red = Network(4,[5,3,2],1)
-    versicolor_red = Network(4,[5,3,2],1)
-    virginica_red = Network(4,[5,3,2],1)
-
     iteraciones = 10000
     tasa_aprendizaje = 0.05
     tolerancia = 1e-8
 
+    # Creacion de las redes neuronales para cada especie,
+    # cada red neuronal tiene 4 neuronas en la capa de entrada ya que se tienen 4 caracteristicas, 
+    # 1 capa oculta con 5 neuronas
+    # y una neurona en la capa de salida ya que se buscan clasificadores binarios
+    setosa_red = Network(4,[5,3,2],1)
+    versicolor_red = Network(4,[5,3,2],1)
+    virginica_red = Network(4,[5,3,2],1)
+
+
+    # Iris Setosa
     # Se convierten los datos de la especie a un valor binario
     # Comparando los datos con el nombre de la especie
     setosa_train_class = y_train == "Iris-setosa"
